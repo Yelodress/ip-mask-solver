@@ -40,3 +40,5 @@ int etlogique() {
     }
     return resultat[rang];
 };
+
+//test
