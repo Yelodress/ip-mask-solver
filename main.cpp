@@ -32,13 +32,11 @@ int etlogique() {
 
     for (int tour=0; tour<32; tour++)
     {
-        binip[rang]=rang;
-        cin>>binip[rang];
-        cout<<binip[rang];
+        binip[rang]=tour;
+        //cin>>binip[rang];
+        cout<<"test";
         rang++;
 
     }
     return resultat[rang];
 };
-
-//test
