@@ -115,4 +115,3 @@ int oulogique() {
 
     return resultat[32];
 };
-//testmaster
