@@ -72,3 +72,4 @@ int etlogique() {
 
     return resultat[32];
 };
+//testmaster
