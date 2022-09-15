@@ -39,29 +39,24 @@ int etlogique() {
     cout<<"Votre IP en binaire bit par bit"<<endl;
     for (int tour=0; tour<32; tour++)
     {
-        binip[rang]=tour;
         cout<<"bit "<<tour+1<<": ";
-        cin>>binip[rang];
+        cin>>binip[tour];
         rang++;
 
     }
     cout<<"Votre masque en binaire bit par bit"<<endl;
     for (int tour=0; tour<32; tour++)
     {
-        binmasque[rang]=tour;
         cout<<"bit "<<tour+1<<": ";
-        cin>>binmasque[rang];
+        cin>>binmasque[tour];
         rang++;
 
     }
     cout<<"Votre resultat logique:"<<endl;
     for (int tour=0; tour<32; tour++)
     {
-        binip[rang]=tour;
-        binmasque[rang]=tour;
-        resultat[rang]=tour;
-        resultat[rang] = binip[rang] && binmasque[rang];
-        cout<<resultat[rang];
+        resultat[tour] = binip[tour] & binmasque[tour];
+        cout<<resultat[tour];
         rang++;
         if (tour==3 || tour==11 || tour==19 || tour==27)
         {
