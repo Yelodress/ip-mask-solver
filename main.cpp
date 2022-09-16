@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stdio.h>
+#include <string>
+
 using namespace std;
 int etlogique();
 int oulogique();
@@ -56,6 +58,7 @@ int etlogique() {
     {
         resultat[tour] = binip[tour] & binmasque[tour];
         cout<<resultat[tour];
+
         if (tour==3 || tour==11 || tour==19 || tour==27)
         {
             cout<<" ";
