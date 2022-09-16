@@ -2,6 +2,7 @@
 #include <stdio.h>
 using namespace std;
 int etlogique();
+int oulogique();
 
 int main()
 {
@@ -25,6 +26,7 @@ int main()
         case 'c':
             //appel fonction ou logique
             cout<<"OU logique entre deux adresses:"<<endl;
+            oulogique();
             break;
 
     }
@@ -34,14 +36,12 @@ int etlogique() {
     int binip[32];
     int binmasque[32];
     int resultat[32];
-    int rang=0;
 
     cout<<"Votre IP en binaire bit par bit"<<endl;
     for (int tour=0; tour<32; tour++)
     {
         cout<<"bit "<<tour+1<<": ";
         cin>>binip[tour];
-        rang++;
 
     }
     cout<<"Votre masque en binaire bit par bit"<<endl;
@@ -49,7 +49,6 @@ int etlogique() {
     {
         cout<<"bit "<<tour+1<<": ";
         cin>>binmasque[tour];
-        rang++;
 
     }
     cout<<"Votre resultat logique:"<<endl;
@@ -57,7 +56,44 @@ int etlogique() {
     {
         resultat[tour] = binip[tour] & binmasque[tour];
         cout<<resultat[tour];
-        rang++;
+        if (tour==3 || tour==11 || tour==19 || tour==27)
+        {
+            cout<<" ";
+        }
+        if (tour==7 || tour==15 || tour==23)
+        {
+            cout<<" . ";
+        }
+
+    }
+
+    return resultat[32];
+};
+
+int oulogique() {
+    int binip[32];
+    int binmasque[32];
+    int resultat[32];
+
+    cout<<"Votre IP en binaire bit par bit"<<endl;
+    for (int tour=0; tour<32; tour++)
+    {
+        cout<<"bit "<<tour+1<<": ";
+        cin>>binip[tour];
+
+    }
+    cout<<"Votre masque en binaire bit par bit"<<endl;
+    for (int tour=0; tour<32; tour++)
+    {
+        cout<<"bit "<<tour+1<<": ";
+        cin>>binmasque[tour];
+
+    }
+    cout<<"Votre resultat logique:"<<endl;
+    for (int tour=0; tour<32; tour++)
+    {
+        resultat[tour] = binip[tour] | binmasque[tour];
+        cout<<resultat[tour];
         if (tour==3 || tour==11 || tour==19 || tour==27)
         {
             cout<<" ";
