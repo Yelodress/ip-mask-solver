@@ -5,6 +5,7 @@
 using namespace std;
 int etlogique();
 int oulogique();
+int convertisseur();
 
 int main()
 {
@@ -13,22 +14,27 @@ int main()
     cout<<"a pour calculer une IP en binaire"<<endl;
     cout<<"b pour faire un ET logique entre deux adresses en binaire"<<endl;
     cout<<"c pour faire un OU logique entre deux adresses en binaire"<<endl;
+    cout<<"d pour convertir une valeur en bases 10, 16, 8, 2"<<endl;
     cin>>choix;
     switch (choix)
     {
-        case 'a':
+        case '1':
             //appel fonction calcul ip en binaire
             cout<<"Calcul d'IP en Binaire:"<<endl;
             break;
-        case 'b':
+        case '2':
             //appel fonction et logique
             cout<<"ET logique entre deux adresses:"<<endl;
             etlogique();
             break;
-        case 'c':
+        case '3':
             //appel fonction ou logique
             cout<<"OU logique entre deux adresses:"<<endl;
             oulogique();
+            break;
+        case '4':
+            //appel fonction calculatrice
+            convertisseur();
             break;
 
     }
@@ -74,6 +80,45 @@ int etlogique() {
 };
 
 int oulogique() {
+
+};
+
+int convertisseur()
+{
+    int entree;
+    char choix;
+
+    cout<<"Quelle est la base de votre valeur ? \n1 = dec \n2 = hex \n3 = oct"<<endl;
+    cin>>choix;
+
+    switch (choix) {
+        case '1':
+            cout<<"Saisissez votre valeur: ";
+            cin>>dec>>entree;
+            cout<<"dec: "<<dec<<entree<<endl;
+            cout<<"hex: "<<hex<<entree<<endl;
+            cout<<"oct: "<<oct<<entree<<endl;
+            break;
+
+        case '2':
+            cout<<"Saisissez votre valeur: ";
+            cin>>hex>>entree;
+            cout<<"dec: "<<dec<<entree<<endl;
+            cout<<"hex: "<<hex<<entree<<endl;
+            cout<<"oct: "<<oct<<entree<<endl;
+
+        case '3':
+            cout<<"Saisissez votre valeur: ";
+            cin>>oct>>entree;
+            cout<<"dec: "<<dec<<entree<<endl;
+            cout<<"hex: "<<hex<<entree<<endl;
+            cout<<"oct: "<<oct<<entree<<endl;
+    }
+
+}
+
+int binoulogique()
+{
     int binip[32];
     int binmasque[32];
     int resultat[32];
@@ -107,6 +152,5 @@ int oulogique() {
         }
 
     }
-
     return resultat[32];
-};
+}
