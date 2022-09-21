@@ -7,14 +7,15 @@ int etlogique();
 int oulogique();
 int convertisseur();
 
+
 int main()
 {
     char choix;
     cout<<"Choisissez un mode:"<<endl;
-    cout<<"a pour calculer une IP en binaire"<<endl;
-    cout<<"b pour faire un ET logique entre deux adresses en binaire"<<endl;
-    cout<<"c pour faire un OU logique entre deux adresses en binaire"<<endl;
-    cout<<"d pour convertir une valeur en bases 10, 16, 8, 2"<<endl;
+    cout<<"1 pour calculer une IP en binaire"<<endl;
+    cout<<"2 pour faire un ET logique entre deux adresses en binaire"<<endl;
+    cout<<"3 pour faire un OU logique entre deux adresses en binaire"<<endl;
+    cout<<"4 pour convertir une valeur en bases 10, 16, 8, 2"<<endl;
     cin>>choix;
     switch (choix)
     {
@@ -25,7 +26,7 @@ int main()
         case '2':
             //appel fonction et logique
             cout<<"ET logique entre deux adresses:"<<endl;
-            etlogique();
+            //etlogique();
             break;
         case '3':
             //appel fonction ou logique
@@ -40,7 +41,7 @@ int main()
     }
 }
 
-int etlogique() {
+int binetlogique() {
     int binip[32];
     int binmasque[32];
     int resultat[32];
@@ -77,44 +78,6 @@ int etlogique() {
     }
 
     return resultat[32];
-};
-
-int oulogique() {
-
-};
-
-int convertisseur()
-{
-    int entree;
-    char choix;
-
-    cout<<"Quelle est la base de votre valeur ? \n1 = dec \n2 = hex \n3 = oct"<<endl;
-    cin>>choix;
-
-    switch (choix) {
-        case '1':
-            cout<<"Saisissez votre valeur: ";
-            cin>>dec>>entree;
-            cout<<"dec: "<<dec<<entree<<endl;
-            cout<<"hex: "<<hex<<entree<<endl;
-            cout<<"oct: "<<oct<<entree<<endl;
-            break;
-
-        case '2':
-            cout<<"Saisissez votre valeur: ";
-            cin>>hex>>entree;
-            cout<<"dec: "<<dec<<entree<<endl;
-            cout<<"hex: "<<hex<<entree<<endl;
-            cout<<"oct: "<<oct<<entree<<endl;
-
-        case '3':
-            cout<<"Saisissez votre valeur: ";
-            cin>>oct>>entree;
-            cout<<"dec: "<<dec<<entree<<endl;
-            cout<<"hex: "<<hex<<entree<<endl;
-            cout<<"oct: "<<oct<<entree<<endl;
-    }
-
 }
 
 int binoulogique()
@@ -154,3 +117,76 @@ int binoulogique()
     }
     return resultat[32];
 }
+
+int decoulogique()
+{
+    cout<<"decioulogique";
+    return 0;
+}
+
+int decetlogique()
+{
+    int entree;
+    int resultat;
+    cout<<"Votre valeur en décimal: "<<endl;
+
+    for(int tour=0; tour<4; tour++) {
+        cout<<"Octet "<<tour<<": "<<endl;
+        cin>>entree;
+        //a finir
+    }
+    return 0;
+}
+
+int oulogique() {
+    char choix;
+
+    cout<<"1: Entrez l'IP en binaire\n2: Entrez l'IP en décimale"<<endl;
+    cin>>choix;
+
+    switch (choix) {
+        case '1':
+            binoulogique();
+            break;
+
+        case '2':
+            decoulogique();
+            break;
+    }
+    return 0;
+}
+
+int convertisseur()
+{
+    int entree;
+    char choix;
+
+    cout<<"Quelle est la base de votre valeur ? \n1 = dec \n2 = hex \n3 = oct"<<endl;
+    cin>>choix;
+
+    switch (choix) {
+        case '1':
+            cout<<"Saisissez votre valeur: ";
+            cin>>dec>>entree;
+            cout<<"dec: "<<dec<<entree<<endl;
+            cout<<"hex: "<<hex<<entree<<endl;
+            cout<<"oct: "<<oct<<entree<<endl;
+            break;
+
+        case '2':
+            cout<<"Saisissez votre valeur: ";
+            cin>>hex>>entree;
+            cout<<"dec: "<<dec<<entree<<endl;
+            cout<<"hex: "<<hex<<entree<<endl;
+            cout<<"oct: "<<oct<<entree<<endl;
+
+        case '3':
+            cout<<"Saisissez votre valeur: ";
+            cin>>oct>>entree;
+            cout<<"dec: "<<dec<<entree<<endl;
+            cout<<"hex: "<<hex<<entree<<endl;
+            cout<<"oct: "<<oct<<entree<<endl;
+    }
+    return 0;
+}
+
